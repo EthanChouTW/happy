@@ -16,7 +16,8 @@
     "ota:production": "NODE_ENV=production APP_ENV=production yarn typecheck && eas update --branch production",
     "typecheck": "tsc --noEmit",
     "postinstall": "patch-package",
-    "generate-theme": "tsx sources/theme.gen.ts"
+    "generate-theme": "tsx sources/theme.gen.ts",
+    "server": "tsx server/index.ts"
   },
   "jest": {
     "preset": "jest-expo"
@@ -50,6 +51,7 @@
     "axios": "^1.10.0",
     "color": "^5.0.0",
     "diff": "^8.0.2",
+    "express": "^4.19.2",
     "expo": "~53.0.17",
     "expo-application": "~6.1.5",
     "expo-asset": "~11.1.7",
@@ -139,8 +141,11 @@
     "react-textarea-autosize": "^8.5.9",
     "resolve-path": "^1.4.0",
     "rn-encryption": "^2.5.0",
+    "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "twrnc": "^4.9.1",
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^2.0.6",
     "uuid": "^11.1.0",
     "vitest": "^3.2.4",
     "zod": "^4.0.5",
