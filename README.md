@@ -44,6 +44,26 @@ happy
 
 ```
 
+## Run your own backend
+
+To connect the mobile client directly to a local Claude Code CLI, this repository now includes a lightweight proxy server.
+
+1. Start the proxy on the machine running the Claude CLI:
+
+    ```bash
+    yarn server
+    ```
+
+    By default it listens on `http://localhost:3005` and forwards requests to a CLI at `http://localhost:1337`. Override the target with `CLAUDE_CLI_URL` if your CLI runs elsewhere.
+
+2. Launch the mobile app pointed at the proxy:
+
+    ```bash
+    yarn start:local-server
+    ```
+
+Expose port 3005 through your preferred proxy or tunneling solution (such as `ngrok`) to access the CLI remotely.
+
 ## How does it work?
 
 On your computer, run `happy` instead of `claude` to start the normal Claude Code UI through our wrapper. When you want to control Claude from your phone, it restarts the session in remote mode. To switch back to your computer, just press any key on your keyboard.
